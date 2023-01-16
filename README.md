@@ -1,1 +1,1 @@
-# Video--Synchronization-Platform
+# Video-Synchronization-Platform
