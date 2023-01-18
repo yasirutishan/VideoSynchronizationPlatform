@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121783460-1"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-121783460-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Colour-PLAY</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- Socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- Font awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="css/small-business.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/mobile-style.css" rel="stylesheet">
+    <link href="css/html5player.css" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="img/ee.png">
+
+</head>
+
+<body class="bg-light" id="Home">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#Home"><img src="img/logo.png" alt="Colour Logo" height="50"
+                    width="50"> Colour-PLAY</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <!-- <li class="nav-item active">
+              <a class="nav-link js-scroll-trigger" href="#Home">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li> -->
+                    <li class="nav-item">
+                        <a id="chat-nav" class="nav-link js-scroll-trigger hide" href="#messageArea">Chatroom</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="about-nav" class="nav-link js-scroll-trigger hide" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="contact-nav" class="nav-link js-scroll-trigger hide" href="#contact">Contact</a>
+                    </li>
+                    <form id="login" action="/login" method="post">
+                        <li class="nav-item" style="color: white;">
+                            <input type="text" name="email" id="lemail" placeholder="Email">
+                            <p style="color:rgb(255, 255, 255); margin-bottom: 0px" id="missinginfo9"></p>
+                        </li>
+                        <li class="nav-item" style="color: white;">
+                            <input type="password" name="password" id="lpassword" placeholder="Password">
+                            <p style="color:rgb(255, 255, 255); margin-bottom: 0px" id="missinginfo10"></p>
+                        </li>
+                        <li class="nav-item" style="color: white;">
+                            <button type="submit" class="nav-button">Login </button>
+                        </li>
+                    </form>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- User Form (First Page) -->
+        <div id="userFormArea" class="row">
+            <div class="col-md-12">
+                <!-- ADD DESCRIPTION HERE -->
+                <h2>Welcome to Video Synchronization Platform</h2>
+                <p class="lead">The hot new video synchronization platform used to watch videos in realtime with
+                    friends!</p>
+                <hr style="height:20pt; visibility:hidden;" />
+
+                <h2> Create an Account </h2>
+                <form id="signup" action="/signup" onclick="" method="post">
+                    <div class="form-group">
+                        <br>
+
+                        <label><B>First Name</B></label>
+                        <p style="color:red; margin-bottom: 0px" id="missinginfo1"></p>
+                        <input class="form-control" id="firstname" name="firstname" />
+                        <br />
+                        <label><B>Last Name</B></label>
+                        <p style="color:red; margin-bottom: 0px" id="missinginfo2"></p>
+                        <input class="form-control" id="lastname" name="lastname" />
+                        <br />
+                        <label><B>NIC</B></label>
+                        <p style="color:red; margin-bottom: 0px" id="missinginfo3"></p>
+                        <input class="form-control" id="nic" name="nic" />
+                        <br />
+                        <label><B>Address</B></label>
+                        <p style="color:red; margin-bottom: 0px" id="missinginfo4"></p>
+                        <input class="form-control" id="address" name="address" />
+                        <br />
+                        <label><B>Contact</B></label>
+                        <p style="color:red; margin-bottom: 0px" id="missinginfo5"></p>
+                        <input class="form-control" id="contact" name="contact" />
+                        <br />
+                        <label><B>Email</B></label>
+                        <p style="color:red; margin-bottom: 0px" id="missinginfo6"></p>
+                        <input class="form-control" id="email" name="email" />
+                        <br />
+                        <label><B>Password</B></label>
+                        <p style="color:red; margin-bottom: 0px" id="missinginfo7"></p>
+                        <input type="password" class="form-control" id="password" name="password" />
+                        <br />
+                        <label><B>Confirm Password</B></label>
+                        <p style="color:red; margin-bottom: 0px" id="missinginfo8"></p>
+                        <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" />
+                        <br />
+
+                        <button style="margin-top: 10px;" type="submit" class="btn btn-primary" value="Sign Up">Sign
+                            Up</button>
+                        <hr style="height:65pt; visibility:hidden;" />
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer id="footer" class="py-5 bg-dark footer">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Video Synchronization Platform 2023</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+</body>
+
+<script>
+    $(function () {
+
+        var $signup = $('#signup');
+        var $firstname = $('#firstname');
+        var $lastname = $('#lastname');
+        var $nic = $('#nic');
+        var $address = $('#address');
+        var $contact = $('#contact');
+        var $email = $('#email');
+        var $password = $('#password');
+        var $confirmpassword = $('#confirmpassword');
+
+        var $login = $('#login');
+        var $lemail = $('#email');
+        var $lpassword = $('#password');
+
+        $signup.submit(function (e) {
+            e.preventDefault();
+
+            // If First Name not entered
+            if ($firstname.val() == "") {
+                console.log("ENTER A NAME")
+                var noname = document.getElementById('missinginfo1')
+                noname.innerHTML = "First Name must not be empty. Enter it below!"
+            }
+
+            // If Last Name not entered
+            if ($lastname.val() == "") {
+                console.log("ENTER A NAME")
+                var noname = document.getElementById('missinginfo2')
+                noname.innerHTML = "Last Name must not be empty. Enter it below!"
+            }
+
+            // If NIC not entered
+            if ($nic.val() == "") {
+                console.log("ENTER A NAME")
+                var noname = document.getElementById('missinginfo3')
+                noname.innerHTML = "Enter the valid NIC Number."
+            }
+
+            // If Address not entered
+            if ($address.val() == "") {
+                console.log("ENTER A NAME")
+                var noname = document.getElementById('missinginfo4')
+                noname.innerHTML = "Address must not be empty. Enter it below!"
+            }
+
+            // If Contact not entered
+            if ($contact.val() == "") {
+                console.log("ENTER A NAME")
+                var noname = document.getElementById('missinginfo5')
+                noname.innerHTML = "Enter the valid Contact Number."
+            }
+
+            // If Email not entered
+            if ($email.val() == "") {
+                console.log("ENTER A NAME")
+                var noname = document.getElementById('missinginfo6')
+                noname.innerHTML = "Email Address must not be empty. Enter it below!"
+            }
+
+            // If Password not entered
+            if ($password.val() == "") {
+                console.log("ENTER A NAME")
+                var noname = document.getElementById('missinginfo7')
+                noname.innerHTML = "Make sure to give a Password"
+            }
+
+            // If Confirm Password not entered
+            if ($confirmpassword.val() == "") {
+                console.log("ENTER A NAME")
+                var noname = document.getElementById('missinginfo8')
+                noname.innerHTML = "Make sure to give the same Password as Confirm Password!"
+            }
+
+            }
+
+            );
+
+        })
+
+        $login.submit(function (e) {
+            e.preventDefault();
+
+            // If First Name not entered
+            if ($lemail.val() == "") {
+                console.log("ENTER A NAME")
+                var noname = document.getElementById('missinginfo9')
+                noname.innerHTML = "First Name must not be empty. Enter it below!"
+            }
+
+            // If Last Name not entered
+            if ($lpassword.val() == "") {
+                console.log("ENTER A NAME")
+                var noname = document.getElementById('missinginfo10')
+                noname.innerHTML = "Last Name must not be empty. Enter it below!"
+            }
+            
+
+            })
+
+</script>
+
+</html>
