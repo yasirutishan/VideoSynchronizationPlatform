@@ -17,7 +17,7 @@ var setUpPassport = require("./setuppassport");
 var flash = require("connect-flash");
 
 const { rest } = require('lodash');
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 app.use(session({
@@ -71,6 +71,11 @@ var UsersSchema = new Schema({
 
 app.use(express.static(__dirname + '/'));
 
+var cors = require('cors')
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+app.use(express.json());
+
 server.listen(process.env.PORT || 3000);
 console.log('Server Started . . .');
 
@@ -102,7 +107,6 @@ app.post("/login", passport.authenticate("user", {
 
 app.post("/signup", function (req, res, next) {
     //var mod = new model(req.body);
-
     User.findOne({ email: req.body.email }, function (err, user) {
         if (err) { return next(err); }
         if (user) {
@@ -120,6 +124,7 @@ app.post("/signup", function (req, res, next) {
             email: req.body.email,
             password: req.body.password
         });
+        
         newUser.save(next);
         res.sendFile(__dirname + '/index.html');
     });
@@ -131,8 +136,6 @@ app.get("/logout", function (req, res) {
         res.sendFile(__dirname + '/index.html');
     });
 });
-
-
 
 //var roomno = 1;
 /*
@@ -1052,3 +1055,5 @@ io.sockets.on('connection', function (socket) {
     }
 
 })
+
+module.exports.app = app 

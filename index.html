@@ -83,7 +83,7 @@
                             <p style="color:rgb(255, 255, 255); margin-bottom: 0px" id="missinginfo10"></p>
                         </li>
                         <li class="nav-item" style="color: white;">
-                            <button type="submit" class="nav-button">Login </button>
+                            <button type="submit" id="login" class="nav-button">Login </button>
                         </li>
                     </form>
                 </ul>
@@ -104,7 +104,7 @@
                 <hr style="height:20pt; visibility:hidden;" />
 
                 <h2> Create an Account </h2>
-                <form id="signup" action="/signup" onclick="" method="post">
+                <form id="signup" action="/signup" method="post">
                     <div class="form-group">
                         <br>
 
@@ -141,7 +141,7 @@
                         <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" />
                         <br />
 
-                        <button style="margin-top: 10px;" type="submit" class="btn btn-primary" value="Sign Up">Sign
+                        <button style="margin-top: 10px;" type="submit" class="btn btn-primary" id="signup">Sign
                             Up</button>
                         <hr style="height:65pt; visibility:hidden;" />
                     </div>
@@ -176,11 +176,11 @@
         var $confirmpassword = $('#confirmpassword');
 
         var $login = $('#login');
-        var $lemail = $('#email');
-        var $lpassword = $('#password');
+        var $lemail = $('#lemail');
+        var $lpassword = $('#lpassword');
 
         $signup.submit(function (e) {
-            e.preventDefault();
+            //e.preventDefault();
 
             // If First Name not entered
             if ($firstname.val() == "") {
@@ -238,31 +238,34 @@
                 noname.innerHTML = "Make sure to give the same Password as Confirm Password!"
             }
 
-            }
+        }
 
-            );
-
-        })
+        );
 
         $login.submit(function (e) {
-            e.preventDefault();
+        //e.preventDefault();
 
-            // If First Name not entered
-            if ($lemail.val() == "") {
-                console.log("ENTER A NAME")
-                var noname = document.getElementById('missinginfo9')
-                noname.innerHTML = "First Name must not be empty. Enter it below!"
-            }
+        // If First Name not entered
+        if ($lemail.val() == "") {
+            console.log("ENTER A NAME")
+            var noname = document.getElementById('missinginfo9')
+            noname.innerHTML = "First Name must not be empty. Enter it below!"
+        }
 
-            // If Last Name not entered
-            if ($lpassword.val() == "") {
-                console.log("ENTER A NAME")
-                var noname = document.getElementById('missinginfo10')
-                noname.innerHTML = "Last Name must not be empty. Enter it below!"
-            }
-            
+        // If Last Name not entered
+        if ($lpassword.val() == "") {
+            console.log("ENTER A NAME")
+            var noname = document.getElementById('missinginfo10')
+            noname.innerHTML = "Last Name must not be empty. Enter it below!"
+        }
 
-            })
+
+    })
+
+    })
+
+
+   
 
 </script>
 
