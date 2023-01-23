@@ -48,6 +48,7 @@ var db = mongoose.connect(params.DATABASECONNECTION, function (error, response) 
     if (error) { console.log(error); }
     else { console.log('connected' + db) }
 });
+
 setUpPassport();
 
 
