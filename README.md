@@ -1,5 +1,7 @@
 # Video-Synchronization-Platform
 
+
+
 ## About Colour-PLAY
 Colour-PLAY is a video synchronization platform created for viewing parties with friends!
 
