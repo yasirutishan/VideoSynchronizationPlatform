@@ -1,6 +1,6 @@
 # Video-Synchronization-Platform
 
-About Colour-PLAY
+## About Colour-PLAY
 Colour-PLAY is a video synchronization platform created for viewing parties with friends!
 
 To use Colour-PLAY just enter your name and a shared room number with friends. Then all you have to do is select your video client (YouTube by default), enter a video ID, and click "Change Video". All video playback should be synchronized to everyone in the room!
@@ -9,8 +9,8 @@ There is one host per room that can control the video client directly with the n
 
 Have fun watching videos with friends!
 
-Contact Me
-Who Am I?
+## Contact Me
+### Who Am I?
 
 I'm Yasiru Tishan A Lead in Graphic Designer & Web Developer I am a creative professional with extensive graphic design, web development, social media, and project management. I am also good at multitasking and hard worker.
 
