@@ -6,6 +6,10 @@ Socket.io
 
 Node.js
 
+MongoDB
+
+Angular Cli
+
 Express
 
 YouTube Data API V3
