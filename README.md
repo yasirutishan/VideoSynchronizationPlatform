@@ -1,6 +1,6 @@
 # Video-Synchronization-Platform
 
-
+![4  Converted](https://user-images.githubusercontent.com/85503750/213990999-6b7acd3e-26a9-4e20-b857-e82af9c6d493.png)
 
 ## About Colour-PLAY
 Colour-PLAY is a video synchronization platform created for viewing parties with friends!
