@@ -9,6 +9,8 @@ There is one host per room that can control the video client directly with the n
 
 Have fun watching videos with friends!
 
+---
+
 ## Contact Me
 ### Who Am I?
 
@@ -18,6 +20,7 @@ I am an enthusiastic, confident character and goal-oriented team leader and coun
 
 You can contact me directly at 10749896@students.plymouth.ac.uk if you have any questions, concerns, or just to say hi! If you want to submit a suggestion, please see the github issues page.
 
+---
 
 ### Dependencies
 
