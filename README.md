@@ -9,8 +9,6 @@ To use Colour-PLAY just enter your name and a shared room number with friends. T
 
 There is one host per room that can control the video client directly with the native player controls. Everyone else can still use them but it will only affect them until they hit sync!
 
-Have fun watching videos with friends!
-
 ---
 
 ## Contact Me
