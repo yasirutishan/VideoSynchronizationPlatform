@@ -48,10 +48,12 @@
 
 <body class="bg-light" id="Home">
 
-            <!-- Loading Page Angular Cli-->
+    <!-- Loading Page Angular Cli-->
     <app-root></app-root>
-  <ngx-ui-loader fgssize="75" [fgstype]="SPINNER.wanderingCubes"></ngx-ui-loader>
-<script src="runtime.755ca2ad3607a7f2.js" type="module"></script><script src="polyfills.07f619d4921efb7a.js" type="module"></script><script src="main.c7fa1be5fc07b1ae.js" type="module"></script>
+    <ngx-ui-loader fgssize="75" [fgstype]="SPINNER.wanderingCubes"></ngx-ui-loader>
+    <script src="runtime.755ca2ad3607a7f2.js" type="module"></script>
+    <script src="polyfills.07f619d4921efb7a.js" type="module"></script>
+    <script src="main.c7fa1be5fc07b1ae.js" type="module"></script>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -64,7 +66,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
- 
+
                     <li class="nav-item">
                         <a id="chat-nav" class="nav-link js-scroll-trigger hide" href="#messageArea">Chatroom</a>
                     </li>
@@ -103,7 +105,8 @@
                         <br />
                         <p style="color:red; margin-bottom: 0px" id="missinginfo2"></p>
                         <label>Enter Room ID (Default 1)</label>
-                        <button type="button" id="button" onClick="randomroom()" class="btn btn-primary random" style="background-color:black;cursor: pointer; border-color:black; " > Random</button>
+                        <button type="button" id="button" onClick="randomroom()" class="btn btn-primary random"
+                            style="background-color:black;cursor: pointer; border-color:black; "> Random</button>
                         <br />
                         <input class="form-control" id="roomnum" />
                         <br />
@@ -122,13 +125,13 @@
                     <div class="mobile-hide"><b>Mobile User</b>, please play the video once manually to give the
                         browser
                         permission to control the video player. </div>
-                    <!-- <hr style="height:0pt; visibility:hidden;" /> -->
 
                     <br>
 
                     <div style="margin: 10px" class="dropdown">
-                        <button style="background-color: #3f4e5d; cursor: pointer; border-color:black;" class="btn btn-info dropdown-toggle" type="button"
-                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button style="background-color: #3f4e5d; cursor: pointer; border-color:black;"
+                            class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-video"></i> Player
                         </button>
                         <div class="form-control dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuButton">
@@ -146,10 +149,7 @@
 
 
 
-                    <!-- <br/> <b>Note:</b> Mobile web browsers do not support autoplay. Host can control player natively. -->
-
                     <!-- INVITE MOVED TO MODAL -->
-                    <!-- <p id="invite">Invite a friend! Send them the link: http://localhost:3000//ROOMNUM</p> -->
                     <h2><span id="hostlabel" class="label label-default"><i class="fas fa-user"></i> Current Host:
                             Yasiru Tishan
                         </span></h2>
@@ -158,7 +158,6 @@
 
                     <div id='playerArea'>
                         <div class="video" id="player"></div>
-                        <!-- <iframe class="video" id="player" allowfullscreen="0" rel="0" width="640" height="360" src="https://www.youtube.com/watch?v=AcWIE9qazLI&ab_channel=CS50" frameborder="1" style="border: solid 4px #37474F"></iframe> -->
                     </div>
                     <div id='dailyArea'>
                         <div class="video" id="player-daily"></div>
@@ -173,8 +172,6 @@
                             <video
                                 src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                                 width="640" height="360" class="video html5video" id="html5src" controls>
-                                <!-- <source src="video/sintel-short.mp4" type="video/mp4">
-                            <source src="video/sintel-short.webm" type="video/webm"> -->
                                 <!-- fallback content here -->
                             </video>
                         </div>
@@ -183,20 +180,25 @@
                     <!----------------------------------- PLAYER AREA ----------------------------------->
                     <!-- <hr> -->
                     <div>
-                        <button id="playButton" onclick="playVideo(roomnum)" style="background-color:red;cursor: pointer; border-color:black; " style="margin-top:.5rem"
+                        <button id="playButton" onclick="playVideo(roomnum)"
+                            style="background-color:red;cursor: pointer; border-color:black; " style="margin-top:.5rem"
                             class="btn btn-primary"><i class="fa fa-play"></i> Play / <i class="fa fa-pause"></i>
                             Pause</button>
 
-                        <button style="background-color: #219a1d;cursor: pointer; border-color:black; " id="syncbutton" onclick="syncVideo(roomnum);syncAlert()" style="margin-top:.5rem"
-                            class="btn btn-primary"><i class="fa fa-sync"></i> Sync</button>
+                        <button style="background-color: #219a1d;cursor: pointer; border-color:black; " id="syncbutton"
+                            onclick="syncVideo(roomnum);syncAlert()" style="margin-top:.5rem" class="btn btn-primary"><i
+                                class="fa fa-sync"></i> Sync</button>
 
-                        <button style="background-color: #219a1d; cursor: pointer; border-color:black; " id="loveButton" onclick="loveLive(roomnum)" style="margin-top:.5rem"
-                            class="btn btn-primary"><i class="far fa-heart"></i> Random K-pop</button>
+                        <button style="background-color: #219a1d; cursor: pointer; border-color:black; " id="loveButton"
+                            onclick="loveLive(roomnum)" style="margin-top:.5rem" class="btn btn-primary"><i
+                                class="far fa-heart"></i> Random K-pop</button>
                         <!-- <br/> -->
-                        <button style="background-color: #219a1d; cursor: pointer; border-color:black; " id="hostbutton" onclick="changeHost(roomnum)" style="margin-top:.5rem"
-                            class="btn btn-primary"><i class="fas fa-users"></i> Make me the host!</button>
+                        <button style="background-color: #219a1d; cursor: pointer; border-color:black; " id="hostbutton"
+                            onclick="changeHost(roomnum)" style="margin-top:.5rem" class="btn btn-primary"><i
+                                class="fas fa-users"></i> Make me the host!</button>
                         <!-- Turn off the lights -->
-                        <button style="background-color: #219a1d; cursor: pointer; border-color:black; " id="lightButton" style="margin-top:.5rem" class="btn btn-primary switch"><i
+                        <button style="background-color: #219a1d; cursor: pointer; border-color:black; "
+                            id="lightButton" style="margin-top:.5rem" class="btn btn-primary switch"><i
                                 style="pointer-events:none;" class="fas fa-lightbulb"></i></button>
                     </div>
 
@@ -207,53 +209,32 @@
                         <input type="Video"
                             style="max-width: 200px; margin-right: .5rem; margin-bottom: .5rem; float: left;"
                             class="form-control" id="inputVideoId" placeholder="Video ID / URL">
-                        <button id="enqueueButton" onclick="enqueueVideoParse(roomnum)" style="background-color: #219a1d; cursor: pointer; border-color:black; " class="btn btn-primary"><i
-                                class="fas fa-plus"></i> Add to Queue</button>
-                        <button id="emptyButton" onclick="emptyQueue(roomnum)" style="background-color: #219a1d; cursor: pointer; border-color:black; " class="btn btn-primary"><i
-                                class="fas fa-trash"></i> Empty Queue</button>
+                        <button id="enqueueButton" onclick="enqueueVideoParse(roomnum)"
+                            style="background-color: #219a1d; cursor: pointer; border-color:black; "
+                            class="btn btn-primary"><i class="fas fa-plus"></i> Add to Queue</button>
+                        <button id="emptyButton" onclick="emptyQueue(roomnum)"
+                            style="background-color: #219a1d; cursor: pointer; border-color:black; "
+                            class="btn btn-primary"><i class="fas fa-trash"></i> Empty Queue</button>
                     </div>
                     <div>
-                        <!-- <a class="ghost-button-full-color"><i class="far fa-times-circle"></i></a> -->
-                        <button id="changeButton" onclick="changeVideoParse(roomnum)" style="background-color: #ce0684; cursor: pointer; border-color:black; " class="btn btn-primary"><i
-                                class="fas fa-exchange-alt"></i> Change Video</button>
-                        <button id="previousButton" onclick="prevVideo(roomnum)" style="background-color: #007aae; cursor: pointer; border-color:black; " class="btn btn-primary"><i
-                                class="fas fa-step-backward"></i> Previous</button>
-                        <button id="nextButton" onclick="playNext(roomnum)" style="background-color: #007aae; cursor: pointer; border-color:black; " class="btn btn-primary"><i
-                                class="fas fa-step-forward"></i> Next</button>
+
+                        <button id="changeButton" onclick="changeVideoParse(roomnum)"
+                            style="background-color: #ce0684; cursor: pointer; border-color:black; "
+                            class="btn btn-primary"><i class="fas fa-exchange-alt"></i> Change Video</button>
+                        <button id="previousButton" onclick="prevVideo(roomnum)"
+                            style="background-color: #007aae; cursor: pointer; border-color:black; "
+                            class="btn btn-primary"><i class="fas fa-step-backward"></i> Previous</button>
+                        <button id="nextButton" onclick="playNext(roomnum)"
+                            style="background-color: #007aae; cursor: pointer; border-color:black; "
+                            class="btn btn-primary"><i class="fas fa-step-forward"></i> Next</button>
 
                         <br />
 
                     </div>
-                    <!-- <input type="file" id="html5-input" /> -->
-                    <!-- Playlist shit -->
-                  <!--  <div id="visual-queue" class="vid-list-container">
-                        <ul class="vid-list" id="vidlist">
-                            <li class="vid-item">
-                                 <div class="thumb">
-                                    <a onClick="removeAt(0)" class="ghost-button-full-color"><i class="far fa-times-circle"></i></a>
-                                    <img src="http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg">
-                                </div>
-                                <div class="desc">
-                                    Jessica Hernandez & the Deltas - Dead Brains
-                                </div> -->
-                           <!-- </li>
-                        </ul>
-                    </div>
-                    <div id="queue-arrows" class="arrows">
-                        <div class="arrow-left">
-                            <i class="fa fa-chevron-left fa-lg"></i>
-                        </div>
-                        <div class="arrow-right">
-                            <i class="fa fa-chevron-right fa-lg"></i>
-                        </div>
-                    </div>-->
+
                     <br />
 
                     <!-- HTML5 player input -->
-                    <!-- <input type="file" id="html5-input" /> -->
-                    <!-- <input type="Video" style="max-width: 200px; margin-right: .5rem; margin-bottom: .5rem; float: left;" class="form-control" id="inputVideoURL" placeholder="Direct URL to .mp4/.webm"> -->
-
-                    <!-- <p style="display: none" id="html5-message" class="lead">Video File Upload Not Yet Supported</p> -->
                     <p style="display: none" id="beta-message" class="lead">Queue is currently only supported by
                         YouTube
                     </p>
@@ -262,14 +243,10 @@
 
                 </div>
 
-                <!-- /.col-lg-8 -->
                 <div class="col-lg-5">
-                    <!-- <div class="col-md-4"> -->
-                    <!-- <div id="onlineArea" class="row"> -->
                     <h5 class="right-header">Online Users</h5>
                     <hr style="height:0pt; visibility:hidden;" />
 
-                    <!-- <br/> -->
                     <div class="col-md-13">
                         <div class="well online-users noscrollbar">
                             <ul class="list-group" id="users"></ul>
@@ -298,7 +275,6 @@
                                 </div>
                                 <div class="modal-body">
                                     <p>Send a friend your unique room link so they can watch videos too!</p>
-                                    <!-- <p style="text-align: center;" id="invite">http://localhost:3000/ROOMNUM</p> -->
                                     <input class="inv_input" id="inv_input" type="text"
                                         value="http://localhost:3000/ROOMNUM" class="field left" readonly>
                                 </div>
@@ -315,84 +291,37 @@
 
                         </div>
                     </div>
-                    <!-- </div> -->
-                    <!-- </div> -->
 
                     <div id="messageArea" class="row">
                         <br />
-                        <!-- <h2 style="color:gray">Chat</h2> -->
                         <div class="col-md-12">
                             <div class="chat noscrollbar" id="chat"></div>
                             <!-- Message Form (Enter Message) -->
                             <form id="messageForm">
                                 <div class="form-group">
                                     <br />
-                                    <!-- <label>Enter Message...</label> -->
                                     <input class="form-control chat-form" id="message" placeholder="Enter Message..." />
-                                    <!-- <textarea class="form-control" id="message"></textarea> -->
                                     <br />
-                                    <!-- <input type="submit" class="btn btn-primary" value="Send Message" /> -->
+
                                     <br />
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <!-- /.col-md-4 -->
             </div>
 
-            <!-- /.row -->
 
             <!-- Call to Action Well -->
             <div class="card text-white bg-secondary my-4 text-center">
                 <div class="card-body">
-                    <p class="text-white m-0"> To use Colour-PLAY just enter your name and a shared room number with friends. Then all you have to do is select your video client (YouTube by default), enter a video ID, and click "Change Video". All video playback should be synchronized to everyone in the room!</p>
+                    <p class="text-white m-0"> To use Colour-PLAY just enter your name and a shared room number with
+                        friends. Then all you have to do is select your video client (YouTube by default), enter a video
+                        ID, and click "Change Video". All video playback should be synchronized to everyone in the room!
+                    </p>
                 </div>
             </div>
 
-            <!-- Content Row -->
-            <!-- <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h2 class="card-title">Card One</h2>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">More Info</a>
-            </div>
-          </div>
-        </div> -->
-            <!-- /.col-md-4 -->
-            <!-- <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h2 class="card-title">Card Two</h2>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">More Info</a>
-            </div>
-          </div>
-        </div> -->
-            <!-- /.col-md-4 -->
-            <!-- <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h2 class="card-title">Card Three</h2>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">More Info</a>
-            </div>
-          </div>
-        </div> -->
-            <!-- /.col-md-4 -->
-
-            <!-- </div> -->
-            <!-- /.row -->
-
-            <!-- <hr style="height:20pt; visibility:hidden;" /> -->
             <section id="about" class="bg-light">
                 <hr style="height:30pt; visibility:hidden;" />
 
@@ -448,7 +377,8 @@
                                 please see the
                                 github issues page.</p>
 
-                            <a href="https://github.com/yasirutishan"><button style="margin-top:.5rem; background-color: black; cursor: pointer; border-color:black;"
+                            <a href="https://github.com/yasirutishan"><button
+                                    style="margin-top:.5rem; background-color: black; cursor: pointer; border-color:black;"
                                     class="btn btn-primary"><i class="far fa-lightbulb"></i> Github</button></a>
                         </div>
                     </div>
@@ -491,23 +421,8 @@
 
             var $vidlist = $('#vidlist');
 
-            //   function send_message() {
-            //       socket.emit('send message', $message.val());
-            //       $message.val('');
-            //   }
-            //
-            //   $(document).keyup(send_message());
-            //   $("input").keypress(function(event) {
-            //     if (event.which == 13) {
-            //         event.preventDefault();
-            //         send_message();
-            //     }
-            // });
-
-
             $messageForm.submit(function (e) {
                 e.preventDefault();
-                // console.log("Submitted");
                 socket.emit('send message', $message.val());
                 $message.val('');
             });
@@ -529,14 +444,11 @@
                 }
                 if (data.user != last_user) {
                     $chat.append('<div class="well well-sm message-well"><strong>' + data.user + '</strong>: ' + data.msg + '</div>');
-                    // $vidlist.append('<div class="vid-item"><div class="thumb"><img src="http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"></div><div class="desc">Jessica Hernandez & the Deltas - Dead Brains</div></div>');
                 }
                 // If you sent the last message, append to previous
                 else {
                     last_div.innerHTML = last_div.innerHTML + " <br> " + data.msg
-                    // $vidlist.append('<div class="vid-item"><div class="thumb"><img src="http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"></div><div class="desc">Jessica Hernandez & the Deltas - Dead Brains</div></div>');
                 }
-                // $chat.scrollTop = $chat.scrollHeight;
                 // Auto scroll on each message send!
                 $('div#chat').scrollTop($('div#chat')[0].scrollHeight)
             });
@@ -544,11 +456,10 @@
             // Submit user form
             $userForm.submit(function (e) {
                 e.preventDefault();
-                // console.log("Submitted");
+
                 // New User
 
                 // Get rid of trailing/leading whitespace
-                // var roomnum_val = $roomnum.val().trim();
 
                 // If name not entered
                 if ($username.val() == "") {
@@ -591,17 +502,12 @@
                             document.getElementById('about-nav').style.display = 'block';
                             document.getElementById('contact-nav').style.display = 'block';
 
-                            // No longer using initarea
-                            // var initStuff = document.getElementById("initArea")
-                            // initStuff.innerHTML = ""
-
                             // This sets the room number on the client
                             if ($roomnum.val() != "") {
                                 roomnum = $roomnum.val()
                             }
 
                             // Sets the invite link (roomnum)
-                            // document.getElementById('invite').innerHTML = "http://localhost:3000/" + roomnum
                             document.getElementById("inv_input").value = "http://localhost:3000/" + roomnum
                             history.pushState('', 'Colour-PLAY', roomnum);
 
@@ -624,8 +530,6 @@
                 var html = '';
                 for (i = 0; i < data.length; i++) {
                     html += '<li style="padding-right: 10em;" class="list-group-item chat-users">' + data[i] + '</li>';
-                    // html += '<div class="well well-sm message-well">' + data[i] + '</div>';
-                    // <div class="well well-sm message-well"><strong>
                 }
 
                 $users.html(html)
@@ -740,7 +644,6 @@
             if (data.id != "" && nosymbols.test(data.id)) {
                 document.getElementById('roomnum').value = data.id
                 // Probably should not force it to be readonly
-                // document.getElementById('roomnum').readOnly = true
                 console.log("You are joining room: " + data.id)
             }
             // Reset url for next person

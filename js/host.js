@@ -43,13 +43,6 @@ socket.on('changeHostLabel', function(data) {
     // Change label
     var hostlabel = document.getElementById('hostlabel')
     hostlabel.innerHTML = "<i class=\"fas fa-user\"></i> Current Host: " + user
-
-    // Generate notify alert
-    // CANNOT CALL IT HERE
-    // socket.emit('notify alerts', {
-    //     alert: 1,
-    //     user: user
-    // })
 })
 
 // When the host leaves, the server calls this function on the next socket

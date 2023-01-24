@@ -1,13 +1,10 @@
 // Calls the play video function on the server
 function playVideo(roomnum) {
-    // dailyPlayer.play();
-    //vimeoPlayer.play()
     socket.emit('play video', {
         room: roomnum
     });
 
     // Doesn't work well unless called in server
-    //io.sockets.in("room-"+roomnum).emit('playVideoClient');
 }
 
 // Calls the sync function on the server
@@ -17,8 +14,7 @@ function syncVideo(roomnum) {
     var videoId = id
 
     // var syncText = document.getElementById("syncbutton")
-    // console.log(syncText.innerHTML)
-    // syncText.innerHTML = "<i class=\"fas fa-sync fa-spin\"></i> Sync"
+
 
     switch (currPlayer) {
         case 0:
@@ -359,17 +355,6 @@ function loveLive(roomnum) {
         time: time
     })
 }
-
-// Get time - DEPRECATED
-// socket.on('getTime', function(data) {
-//     var caller = data.caller
-//     var time = player.getCurrentTime()
-//     console.log("Syncing new socket to time: " + time)
-//     socket.emit('change time', {
-//         time: time,
-//         id: caller
-//     });
-// });
 
 // This just calls the sync host function in the server
 socket.on('getData', function(data) {

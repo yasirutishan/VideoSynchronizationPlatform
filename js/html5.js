@@ -1,15 +1,3 @@
-// Read in video input from filesystem
-// var html5input = document.getElementById('html5-input');
-// html5input.onchange = function(e) {
-//     var html5 = document.getElementById('html5src');
-//     html5.src = URL.createObjectURL(this.files[0]);
-//     // not really needed in this exact case, but since it is really important in other cases,
-//     // don't forget to revoke the blobURI when you don't need it
-//     html5.onend = function(e) {
-//         URL.revokeObjectURL(this.src);
-//     }
-// }
-
 var media = document.querySelector('video');
 
 // Event listeners

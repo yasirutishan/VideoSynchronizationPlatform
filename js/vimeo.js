@@ -27,12 +27,7 @@ vimeoPlayer.on('seeked', function(data) {
     else {
         getHostData(roomnum)
     }
-    // seekOther(roomnum, currTime)
 });
-//
-// player.getVideoTitle().then(function(title) {
-//     console.log('title:', title);
-// });
 
 function vimeoPlay() {
     vimeoPlayer.getPaused().then(function(paused) {

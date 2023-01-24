@@ -48,7 +48,6 @@ function pauseOther(roomnum) {
     socket.emit('pause other', {
         room: roomnum
     });
-    //socket.broadcast.to("room-"+roomnum).emit('justPlay');
 }
 
 socket.on('justPause', function(data) {
@@ -86,7 +85,6 @@ function seekOther(roomnum, currTime) {
         room: roomnum,
         time: currTime
     });
-    // socket.emit('getData');
 }
 
 
@@ -142,7 +140,6 @@ socket.on('justSeek', function(data) {
             if (clientTime < currTime - .2 || clientTime > currTime + .2) {
                 media.currentTime = currTime
             }
-            // playOther(roomnum)
             break;
     }
 });

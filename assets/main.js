@@ -125,8 +125,6 @@
 
 	video.muted = true;
 	video.addEventListener('durationchange', stateUpdate, false);
-	//video.addEventListener('waiting', stateUpdate, false);
-	//video.addEventListener('seeked', stateUpdate, false);
 	video.addEventListener('volumechange', function () {
 		volume.value = video.volume;
 		if (video.muted) {
