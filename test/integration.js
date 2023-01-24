@@ -51,6 +51,9 @@ describe('user', () => {
 })
 
 describe('room', () => {
+    after(()=> {
+        process.exit();
+    });
     it('/:room', (done) => {
         chai.request(sever.app)
             .get('/:'+1)
